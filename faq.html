@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQs | St. Andrew SSS Namakomo</title>
+  <meta name="description" content="Frequently asked questions about St. Andrew Senior Secondary School, Namakomo — admissions, fees, boarding, academics and more.">
+  <link rel="icon" href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhhTWYKJonvPYfuCY8rJmXUM77RDfBgE_b8zfQPFUMawuc6NVCO26VoCQcD0BKBR9fLuAFuZ-qbZcqAqwkHKN9jttvG6uEEpiuHswR3OM6kQKWY9wX36qGeGhr4e-dxTCQ9rhj55pkr1hULzAYtsl617Q9-HKnqRbx79Ed_hgbDJkLnNs2xckCERltvCQ/s5016/ChatGPT%20Image%20Jun%2010,%202026,%2009_49_33%20AM%20%282%29.png" type="image/png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .faq-item { border: 1px solid var(--border); border-radius: var(--radius); background: #fff; margin-bottom: .75rem; overflow: hidden; transition: box-shadow .2s; }
+    .faq-item:hover { box-shadow: var(--shadow); }
+    .faq-question { display: flex; justify-content: space-between; align-items: center; padding: 1.1rem 1.35rem; cursor: pointer; gap: 1rem; user-select: none; }
+    .faq-question h6 { font-family: var(--font-head); font-weight: 700; color: var(--primary); margin: 0; font-size: 1rem; line-height: 1.4; }
+    .faq-toggle { width: 28px; height: 28px; background: var(--bg-alt); border-radius: .5rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: var(--muted); transition: background .2s, transform .3s; }
+    .faq-item.open .faq-toggle { background: var(--gold); color: var(--primary); transform: rotate(45deg); }
+    .faq-answer { padding: 0 1.35rem; max-height: 0; overflow: hidden; transition: max-height .35s ease, padding .35s; }
+    .faq-answer.open { max-height: 500px; padding-bottom: 1.1rem; }
+    .faq-answer p { color: var(--muted); font-size: .92rem; line-height: 1.7; margin: 0; }
+    .faq-category-btn { padding: .45rem 1.1rem; border-radius: .75rem; font-weight: 600; font-size: .85rem; border: 1.5px solid var(--border); background: #fff; color: var(--primary-l); cursor: pointer; transition: all .2s; }
+    .faq-category-btn.active, .faq-category-btn:hover { background: var(--primary); color: #fff; border-color: var(--primary); }
+    .faq-group { display: none; }
+    .faq-group.active { display: block; }
+  </style>
+</head>
+<body>
+<div id="nav-placeholder"></div>
+
+<section class="page-hero" style="background-image:url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1600&q=80')">
+  <div class="hero-overlay"></div>
+  <div class="container hero-content">
+    <nav class="breadcrumb-custom"><a href="index.html">Home</a><span class="sep"><i class="bi bi-chevron-right"></i></span><span class="current">FAQs</span></nav>
+    <div class="hero-tag"><span>Help Centre</span></div>
+    <h1>Frequently Asked Questions</h1>
+    <p>Answers to the questions parents and students ask us most often.</p>
+  </div>
+</section>
+
+<section class="section-pad bg-alt">
+  <div class="container">
+    <!-- Search -->
+    <div class="row justify-content-center mb-5" data-aos="fade-up">
+      <div class="col-lg-6">
+        <div class="position-relative">
+          <i class="bi bi-search position-absolute" style="left:1rem;top:50%;transform:translateY(-50%);color:var(--muted);font-size:1.1rem"></i>
+          <input type="search" id="faqSearch" placeholder="Search questions…" class="form-control-custom" style="padding-left:3rem;padding-top:.9rem;padding-bottom:.9rem;font-size:1rem">
+        </div>
+      </div>
+    </div>
+
+    <!-- Category Tabs -->
+    <div class="d-flex flex-wrap justify-content-center gap-2 mb-5" data-aos="fade-up">
+      <button class="faq-category-btn active" data-faq-cat="admissions">Admissions</button>
+      <button class="faq-category-btn" data-faq-cat="fees">Fees &amp; Payments</button>
+      <button class="faq-category-btn" data-faq-cat="academics">Academics</button>
+      <button class="faq-category-btn" data-faq-cat="boarding">Boarding Life</button>
+      <button class="faq-category-btn" data-faq-cat="general">General</button>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-lg-9">
+
+        <!-- ADMISSIONS -->
+        <div class="faq-group active" data-faq-group="admissions">
+          <div class="faq-item" data-aos="fade-up" data-aos-delay="50">
+            <div class="faq-question"><h6>What are the entry requirements for Senior 1?</h6><div class="faq-toggle"><i class="bi bi-plus-lg"></i></div></div>
+            <div class="faq-answer"><p>Students applying for Senior 1 must have sat and passed the Primary Leaving Examinations (PLE). We look for candidates with at least a Second Grade (aggregate 9–12) in their PLE results. A certified copy of the PLE results slip and a transfer certificate from the primary school are required.</p></div>
+          </div>
+          <div class="faq-item" data-aos="fade-up" data-aos-delay="100">
+            <div class="faq-question"><h6>What documents do I need to apply for admission?</h6><div class="faq-toggle"><i class="bi bi-plus-lg"></i></div></div>
+            <div class="faq-answer"><p>You will need: a certified copy of PLE results (for S1) or UCE results (for S5), a certified copy of the birth certificate, 4 passport-size photographs, a transfer certificate from the previous school, a medical certificate of fitness, and a completed application form. A parent/guardian National ID copy is also required.</p></div>
+          </div>
+          <div class="faq-item" data-aos="fade-up" data-aos-delay="150">
+            <div class="faq-question"><h6>When does the admissions window open?</h6><div class="faq-toggle"><i class="bi bi-plus-lg"></i></div></div>
+            <div class="faq-answer"><p>Admissions for each academic year typically open in November/December of the preceding year, following the release of UNEB results. We recommend applying as early as possible as places fill quickly. Visit our <a href="admissions.html" style="color:#A81818">Admissions page</a> or contact the school office for the exact opening date each year.</p></div>
+          </div>
+          <div class="faq-item" data-aos="fade-up" data-aos-delay="200">
+            <div class="faq-question"><h6>Is there an entrance examination?</h6><div class="faq-toggle"><i class="bi bi-plus-lg"></i></div></div>
+            <div class="faq-answer"><p>Shortlisted applicants are invited for a brief interview and oral assessment to help us understand the student's academic readiness and interests. This is not a written exam — it is a friendly conversation to help us best support the student from the start.</p></div>
+          </div>
+          <div class="faq-item" data-aos="fade-up" data-aos-delay="250">
+            <div class="faq-question"><h6>Do you accept mid-term or mid-year transfers?</h6><div class="faq-toggle"><i class="bi bi-plus-lg"></i></div></div>
+            <div class="faq-answer"><p>Mid-year transfers are considered on a case-by-case basis and are subject to space availability. The student must provide a valid reason for transfer, a transfer certificate, and all academic records from the previous school. Please contact our admissions office directly to discuss your situation.</p></div>
+          </div>
+        </div>
+
+        <!-- FEES -->
+        <div class="faq-group" data-faq-group="fees">
+          <div class="faq-item" data-aos="fade-up" data-aos-delay="50">
+            <div class="faq-question"><h6>How much are the school fees per term?</h6><div class="faq-toggle"><i class="bi bi-plus-lg"></i></div></div>
+            <div class="faq-answer"><p>O-Level fees total UGX 735,000 per term (including tuition, boarding, activity, ICT, medical, and library fees). A-Level fees total UGX 820,000 per term. One-time registration of UGX 50,000 applies to new students. Please visit our <a href="fees.html" style="color:#A81818">Fees Structure page</a> for the full breakdown.</p></div>
+          </div>
+          <div class="faq-item" data-aos="fade-up" data-aos-delay="100">
+            <div class="faq-question"><h6>When must fees be paid?</h6><div class="faq-toggle"><i class="bi bi-plus-lg"></i></div></div>
+            <div class="faq-answer"><p>Fees must be paid in full before or on the first day of each term. Students who have not paid fees by the end of the first week of term may be sent home until fees are settled. Please contact the bursar in advance if you anticipate any difficulties — we are here to help.</p></div>
+          </div>
+          <div class="faq-item" data-aos="fade-up" data-aos-delay="150">
+            <div class="faq-question"><h6>What payment methods are accepted?</h6><div class="faq-toggle"><i class="bi bi-plus-lg"></i></div></div>
+            <div class="faq-answer"><p>We accept payment via bank deposit to our Centenary Bank account (Account Name: St. Andrew SSS Namakomo, Account No: 3100012345678, Kayunga Branch) and via MTN Mobile Money to 0752 842 602. Please always keep your receipt and submit a copy to the bursar's office.</p></div>
+          </div>
+          <div class="faq-item" data-aos="fade-up" data-aos-delay="200">
+            <div class="faq-question"><h6>Are scholarships or bursaries available?</h6><div class="faq-toggle"><i class="bi bi-plus-lg"></i></div></div>
+            <div class="faq-answer"><p>Yes. We offer partial and full tuition waivers for top UNEB performers, bursaries for financially disadvantaged families, and talent scholarships for sports and arts. Applications are reviewed each term. Please contact the headteacher's office or visit our <a href="fees.html" style="color:#A81818">Fees page</a> for application details.</p></div>
+          </div>
+        </div>
+
+        <!-- ACADEMICS -->
+        <div class="faq-group" data-faq-group="academics">
+          <div class="faq-item" data-aos="fade-up" data-aos-delay="50">
+            <div class="faq-question"><h6>What subject combinations are offered at A-Level?</h6><div class="faq-toggle"><i class="bi bi-plus-lg"></i></div></div>
+            <div class="faq-answer"><p>We offer the following A-Level combinations: PCB (Physics, Chemistry, Biology), PCM (Physics, Chemistry, Mathematics), MEG (Mathematics, Economics, Geography), HEL (History, Economics, Literature), HGL (History, Geography, Literature), and EGM (Economics, Geography, Mathematics). Two subsidiary subjects (General Paper and one language) are taken alongside principal subjects.</p></div>
+          </div>
+          <div class="faq-item" data-aos="fade-up" data-aos-delay="100">
+            <div class="faq-question"><h6>How are students assessed throughout the year?</h6><div class="faq-toggle"><i class="bi bi-plus-lg"></i></div></div>
+            <div class="faq-answer"><p>Students sit continuous assessment tests (CATs) monthly, mid-term examinations, and end-of-term examinations each term. Progress reports are issued at the end of every term and shared with parents. Mock UNEB examinations are conducted in the term before the national exams.</p></div>
+          </div>
+          <div class="faq-item" data-aos="fade-up" data-aos-delay="150">
+            <div class="faq-question"><h6>What is the school's UNEB pass rate?</h6><div class="faq-toggle"><i class="bi bi-plus-lg"></i></div></div>
+            <div class="faq-answer"><p>In 2024, St. Andrew SSS Namakomo achieved a 94% overall UNEB pass rate — our best ever result — and topped the district rankings in both O-Level and A-Level. We consistently exceed national averages across English, Mathematics, Biology, History and Geography.</p></div>
+          </div>
+          <div class="faq-item" data-aos="fade-up" data-aos-delay="200">
+            <div class="faq-question"><h6>Are remedial classes available for struggling students?</h6><div class="faq-toggle"><i class="bi bi-plus-lg"></i></div></div>
+            <div class="faq-answer"><p>Yes. We provide afternoon remedial sessions for students identified as needing extra support. Our Director of Studies monitors individual progress and organises targeted revision programs. Peer tutoring between senior and junior students is also encouraged.</p></div>
+          </div>
+        </div>
+
+        <!-- BOARDING -->
+        <div class="faq-group" data-faq-group="boarding">
+          <div class="faq-item" data-aos="fade-up" data-aos-delay="50">
+            <div class="faq-question"><h6>Is the school fully boarding or day?</h6><div class="faq-toggle"><i class="bi bi-plus-lg"></i></div></div>
+            <div class="faq-answer"><p>St. Andrew SSS Namakomo operates primarily as a boarding school to ensure students have the full benefit of structured study time, supervision, and co-curricular activities. Day student arrangements can be discussed with the headteacher for students living within the immediate Namakomo area.</p></div>
+          </div>
+          <div class="faq-item" data-aos="fade-up" data-aos-delay="100">
+            <div class="faq-question"><h6>What are visiting days?</h6><div class="faq-toggle"><i class="bi bi-plus-lg"></i></div></div>
+            <div class="faq-answer"><p>Official visiting days are held once per term, typically mid-term on a Saturday from 9:00 AM to 4:00 PM. Dates are communicated at the start of each term. Parents are not permitted to visit outside these designated days except in emergencies — please call ahead. Students may not leave the school grounds during visiting days unless on an authorised exeat.</p></div>
+          </div>
+          <div class="faq-item" data-aos="fade-up" data-aos-delay="150">
+            <div class="faq-question"><h6>What items should students bring to school?</h6><div class="faq-toggle"><i class="bi bi-plus-lg"></i></div></div>
+            <div class="faq-answer"><p>Each student should bring: the full school uniform (available from the school on request), bedding (2 bed sheets, 1 blanket, pillow), toilet and bathing items, school stationery, and any prescribed textbooks. A complete items list is provided upon admission. Mobile phones and electronic devices are not permitted for students.</p></div>
+          </div>
+          <div class="faq-item" data-aos="fade-up" data-aos-delay="200">
+            <div class="faq-question"><h6>How is student safety and welfare managed?</h6><div class="faq-toggle"><i class="bi bi-plus-lg"></i></div></div>
+            <div class="faq-answer"><p>Each dormitory has a trained House Parent on duty. The school has a qualified nurse on-site for medical needs and a clear safeguarding policy in place. We have zero tolerance for bullying, and student welfare concerns can be reported to the Deputy Headteacher for Welfare at any time. Parents can contact the school at any time on 0752 842 602.</p></div>
+          </div>
+        </div>
+
+        <!-- GENERAL -->
+        <div class="faq-group" data-faq-group="general">
+          <div class="faq-item" data-aos="fade-up" data-aos-delay="50">
+            <div class="faq-question"><h6>What is the school's religion or faith background?</h6><div class="faq-toggle"><i class="bi bi-plus-lg"></i></div></div>
+            <div class="faq-answer"><p>St. Andrew Senior Secondary School, Namakomo was founded under Christian values and maintains a faith-based ethos. Chapel services and Christian Religious Education are part of the school program. Students of all faith backgrounds are welcome and respected, and Islamic Religious Education is also offered.</p></div>
+          </div>
+          <div class="faq-item" data-aos="fade-up" data-aos-delay="100">
+            <div class="faq-question"><h6>How can I contact the school?</h6><div class="faq-toggle"><i class="bi bi-plus-lg"></i></div></div>
+            <div class="faq-answer"><p>You can reach us by phone at <strong>0752 842 602</strong>, by email at <strong>info@standrewsss.ac.ug</strong>, or via WhatsApp on the same number. Our office is open Monday to Friday 8:00 AM – 5:00 PM and Saturday 9:00 AM – 1:00 PM. You can also use the contact form on our <a href="contact.html" style="color:#A81818">Contact page</a>.</p></div>
+          </div>
+          <div class="faq-item" data-aos="fade-up" data-aos-delay="150">
+            <div class="faq-question"><h6>Where exactly is St. Andrew SSS Namakomo located?</h6><div class="faq-toggle"><i class="bi bi-plus-lg"></i></div></div>
+            <div class="faq-answer"><p>The school is located in Nakifuma, Namakomo, Uganda. It is accessible from Kampala via Kayunga Road. Detailed directions and a Google Maps link are available on our <a href="contact.html" style="color:#A81818">Contact page</a>. Transport arrangements can be discussed with the school at the start of each term.</p></div>
+          </div>
+          <div class="faq-item" data-aos="fade-up" data-aos-delay="200">
+            <div class="faq-question"><h6>Does the school have a school bus?</h6><div class="faq-toggle"><i class="bi bi-plus-lg"></i></div></div>
+            <div class="faq-answer"><p>The school operates transport at the start and end of each term to assist students travelling from Kampala and surrounding areas. Transport costs are quoted separately. Contact the school bursar for current transport rates and pickup points.</p></div>
+          </div>
+          <div class="faq-item" data-aos="fade-up" data-aos-delay="250">
+            <div class="faq-question"><h6>My question isn't listed here. How do I get help?</h6><div class="faq-toggle"><i class="bi bi-plus-lg"></i></div></div>
+            <div class="faq-answer"><p>We're happy to help! Please call us on <strong>0752 842 602</strong>, WhatsApp us, or fill in our <a href="contact.html" style="color:#A81818">contact form</a>. You can also email us at <strong>info@standrewsss.ac.ug</strong> and we will respond within 24 working hours.</p></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Still have questions CTA -->
+    <div class="text-center mt-5 pt-3" data-aos="fade-up">
+      <div style="background:var(--primary);border-radius:var(--radius-xl);padding:2.5rem;max-width:580px;margin:0 auto">
+        <i class="bi bi-chat-dots-fill" style="font-size:2.2rem;color:#CC1C1C;display:block;margin-bottom:1rem"></i>
+        <h4 style="font-family:var(--font-head);color:#fff;font-weight:700">Still Have Questions?</h4>
+        <p style="color:rgba(255,255,255,.7);margin-bottom:1.5rem">Our team is ready to answer any question you have. Reach out via WhatsApp, call, or email.</p>
+        <div class="d-flex gap-3 justify-content-center flex-wrap">
+          <a href="https://wa.me/256752842602" class="btn btn-gold"><i class="bi bi-whatsapp me-2"></i>WhatsApp Us</a>
+          <a href="contact.html" class="btn-outline-light-custom">Contact Form</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="footer-placeholder"></div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script src="js/nav-include.js"></script>
+<script src="js/main.js"></script>
+<script>
+// FAQ accordion
+document.querySelectorAll('.faq-question').forEach(q => {
+  q.addEventListener('click', () => {
+    const item = q.closest('.faq-item');
+    const answer = item.querySelector('.faq-answer');
+    const isOpen = item.classList.contains('open');
+    // Close all
+    document.querySelectorAll('.faq-item').forEach(i => {
+      i.classList.remove('open');
+      i.querySelector('.faq-answer').classList.remove('open');
+    });
+    if (!isOpen) { item.classList.add('open'); answer.classList.add('open'); }
+  });
+});
+// Category tabs
+document.querySelectorAll('.faq-category-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.faq-category-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.faq-group').forEach(g => g.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelector('[data-faq-group="' + btn.dataset.faqCat + '"]').classList.add('active');
+  });
+});
+// Search
+document.getElementById('faqSearch').addEventListener('input', function() {
+  const q = this.value.toLowerCase().trim();
+  if (!q) {
+    document.querySelectorAll('.faq-item').forEach(i => i.style.display = '');
+    return;
+  }
+  // Show all groups when searching
+  document.querySelectorAll('.faq-group').forEach(g => g.classList.add('active'));
+  document.querySelectorAll('.faq-item').forEach(item => {
+    const text = item.textContent.toLowerCase();
+    item.style.display = text.includes(q) ? '' : 'none';
+  });
+});
+</script>
+</body>
+</html>

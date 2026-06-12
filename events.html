@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Events | St. Andrew SSS Namakomo</title>
+  <meta name="description" content="Upcoming and past events at St. Andrew Senior Secondary School, Namakomo — sports days, prize giving, open days and more.">
+  <link rel="icon" href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhhTWYKJonvPYfuCY8rJmXUM77RDfBgE_b8zfQPFUMawuc6NVCO26VoCQcD0BKBR9fLuAFuZ-qbZcqAqwkHKN9jttvG6uEEpiuHswR3OM6kQKWY9wX36qGeGhr4e-dxTCQ9rhj55pkr1hULzAYtsl617Q9-HKnqRbx79Ed_hgbDJkLnNs2xckCERltvCQ/s5016/ChatGPT%20Image%20Jun%2010,%202026,%2009_49_33%20AM%20%282%29.png" type="image/png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .event-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;transition:box-shadow .3s,transform .3s;display:flex;gap:0;}
+    .event-card:hover{box-shadow:var(--shadow-lg);transform:translateY(-3px);}
+    .event-date-block{min-width:80px;background:var(--primary);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:1.25rem .75rem;text-align:center;flex-shrink:0;}
+    .event-date-block .day{font-family:var(--font-head);font-size:2rem;font-weight:900;color:#fff;line-height:1;}
+    .event-date-block .month{color:#CC1C1C;font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;margin-top:.2rem;}
+    .event-date-block .year{color:rgba(255,255,255,.4);font-size:.68rem;margin-top:.1rem;}
+    .event-body{padding:1.25rem 1.5rem;flex:1;}
+    .event-type{font-size:.72rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;margin-bottom:.4rem;}
+    .event-title{font-family:var(--font-head);font-weight:700;color:var(--primary);font-size:1.05rem;margin-bottom:.35rem;}
+    .event-meta{font-size:.82rem;color:var(--muted);display:flex;flex-wrap:wrap;gap:.75rem;}
+    .upcoming-badge{display:inline-block;background:rgba(16,185,129,.12);color:#065F46;font-size:.7rem;font-weight:700;padding:.2rem .6rem;border-radius:4px;margin-left:.5rem;}
+    .past-badge{display:inline-block;background:rgba(100,116,139,.1);color:var(--muted);font-size:.7rem;font-weight:700;padding:.2rem .6rem;border-radius:4px;margin-left:.5rem;}
+    .countdown-box{background:var(--primary);border-radius:var(--radius-xl);padding:2.5rem;color:#fff;text-align:center;}
+    .countdown-unit{background:rgba(255,255,255,.1);border-radius:var(--radius);padding:.85rem;min-width:70px;}
+    .countdown-num{font-family:var(--font-head);font-size:2.5rem;font-weight:900;color:#CC1C1C;line-height:1;}
+    .countdown-lbl{font-size:.7rem;color:rgba(255,255,255,.6);text-transform:uppercase;letter-spacing:.1em;margin-top:.25rem;}
+  </style>
+</head>
+<body>
+<div id="nav-placeholder"></div>
+
+<section class="page-hero" style="background-image:url('https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1600&q=80')">
+  <div class="hero-overlay"></div>
+  <div class="container hero-content">
+    <nav class="breadcrumb-custom"><a href="index.html">Home</a><span class="sep"><i class="bi bi-chevron-right"></i></span><span class="current">Events</span></nav>
+    <div class="hero-tag"><span>School Calendar</span></div>
+    <h1>Events Calendar</h1>
+    <p>Upcoming events, celebrations and key dates at St. Andrew SSS Namakomo.</p>
+  </div>
+</section>
+
+<section class="section-pad">
+  <div class="container">
+
+    <!-- Countdown to next big event -->
+    <div class="row g-4 mb-5 align-items-center" data-aos="fade-up">
+      <div class="col-lg-7">
+        <span class="section-tag">Next Major Event</span>
+        <h2 class="section-title mb-2">Prize-Giving &amp; Graduation Day</h2>
+        <p class="text-muted-custom mb-4">Join us as we celebrate our graduating class of 2025, award outstanding achievers, and officially close the academic year. All parents and guardians are warmly invited.</p>
+        <div class="d-flex flex-wrap gap-3 mb-4">
+          <div class="d-flex align-items-center gap-2 text-sm-muted"><i class="bi bi-calendar3 text-warning"></i><span>Friday, December 5, 2025</span></div>
+          <div class="d-flex align-items-center gap-2 text-sm-muted"><i class="bi bi-clock text-warning"></i><span>9:00 AM – 4:00 PM</span></div>
+          <div class="d-flex align-items-center gap-2 text-sm-muted"><i class="bi bi-geo-alt text-warning"></i><span>School Main Grounds, Namakomo</span></div>
+        </div>
+        <a href="contact.html" class="btn btn-gold">RSVP / Enquire <i class="bi bi-arrow-right ms-1"></i></a>
+      </div>
+      <div class="col-lg-5">
+        <div class="countdown-box">
+          <p style="color:rgba(255,255,255,.7);font-size:.85rem;margin-bottom:1rem">Counting down to Prize-Giving Day</p>
+          <div class="d-flex justify-content-center gap-3" id="countdown">
+            <div class="countdown-unit"><div class="countdown-num" id="cd-days">--</div><div class="countdown-lbl">Days</div></div>
+            <div class="countdown-unit"><div class="countdown-num" id="cd-hours">--</div><div class="countdown-lbl">Hours</div></div>
+            <div class="countdown-unit"><div class="countdown-num" id="cd-mins">--</div><div class="countdown-lbl">Mins</div></div>
+            <div class="countdown-unit"><div class="countdown-num" id="cd-secs">--</div><div class="countdown-lbl">Secs</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Upcoming Events -->
+    <h3 style="font-family:var(--font-head);color:var(--primary);font-weight:700;margin-bottom:1.25rem" data-aos="fade-up">
+      Upcoming Events <span class="upcoming-badge" style="font-size:.75rem;vertical-align:middle">2025</span>
+    </h3>
+    <div class="d-flex flex-column gap-3 mb-5">
+      <div class="event-card" data-aos="fade-up" data-aos-delay="50">
+        <div class="event-date-block"><div class="day">02</div><div class="month">Jun</div><div class="year">2025</div></div>
+        <div class="event-body">
+          <div class="event-type" style="color:var(--emerald)"><i class="bi bi-door-open me-1"></i>Academic</div>
+          <div class="event-title">Term 2 Opening Day<span class="upcoming-badge">Upcoming</span></div>
+          <div class="event-meta"><span><i class="bi bi-clock me-1"></i>8:00 AM</span><span><i class="bi bi-geo-alt me-1"></i>School Assembly Ground</span><span><i class="bi bi-people me-1"></i>All Students</span></div>
+        </div>
+      </div>
+      <div class="event-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="event-date-block" style="background:#8B5CF6"><div class="day">20</div><div class="month">Jun</div><div class="year">2025</div></div>
+        <div class="event-body">
+          <div class="event-type" style="color:#8B5CF6"><i class="bi bi-people me-1"></i>Parents</div>
+          <div class="event-title">Parents &amp; Guardians Open Day<span class="upcoming-badge">Upcoming</span></div>
+          <div class="event-meta"><span><i class="bi bi-clock me-1"></i>9:00 AM – 3:00 PM</span><span><i class="bi bi-geo-alt me-1"></i>School Classrooms</span><span><i class="bi bi-people me-1"></i>Parents, Teachers</span></div>
+        </div>
+      </div>
+      <div class="event-card" data-aos="fade-up" data-aos-delay="150">
+        <div class="event-date-block" style="background:#F97316"><div class="day">12</div><div class="month">Jul</div><div class="year">2025</div></div>
+        <div class="event-body">
+          <div class="event-type" style="color:#F97316"><i class="bi bi-music-note me-1"></i>Arts</div>
+          <div class="event-title">Music, Dance &amp; Drama Festival<span class="upcoming-badge">Upcoming</span></div>
+          <div class="event-meta"><span><i class="bi bi-clock me-1"></i>10:00 AM – 5:00 PM</span><span><i class="bi bi-geo-alt me-1"></i>School Hall</span><span><i class="bi bi-people me-1"></i>All Students &amp; Public</span></div>
+        </div>
+      </div>
+      <div class="event-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="event-date-block" style="background:#CC1C1C"><div class="day">15</div><div class="month">Aug</div><div class="year">2025</div></div>
+        <div class="event-body">
+          <div class="event-type" style="color:#A81818"><i class="bi bi-door-closed me-1"></i>Academic</div>
+          <div class="event-title">End of Term 2 / Closing Day<span class="upcoming-badge">Upcoming</span></div>
+          <div class="event-meta"><span><i class="bi bi-clock me-1"></i>8:00 AM</span><span><i class="bi bi-geo-alt me-1"></i>School Grounds</span><span><i class="bi bi-people me-1"></i>All Students</span></div>
+        </div>
+      </div>
+      <div class="event-card" data-aos="fade-up" data-aos-delay="250">
+        <div class="event-date-block" style="background:#EF4444"><div class="day">08</div><div class="month">Sep</div><div class="year">2025</div></div>
+        <div class="event-body">
+          <div class="event-type" style="color:#EF4444"><i class="bi bi-book me-1"></i>Academic</div>
+          <div class="event-title">Term 3 Opening &amp; Annual Sports Day<span class="upcoming-badge">Upcoming</span></div>
+          <div class="event-meta"><span><i class="bi bi-clock me-1"></i>7:30 AM</span><span><i class="bi bi-geo-alt me-1"></i>School Sports Grounds</span><span><i class="bi bi-people me-1"></i>All Students, Parents</span></div>
+        </div>
+      </div>
+      <div class="event-card" data-aos="fade-up" data-aos-delay="300">
+        <div class="event-date-block" style="background:#06B6D4"><div class="day">01</div><div class="month">Nov</div><div class="year">2025</div></div>
+        <div class="event-body">
+          <div class="event-type" style="color:#06B6D4"><i class="bi bi-pencil-square me-1"></i>Examinations</div>
+          <div class="event-title">UNEB UCE &amp; UACE Examinations Begin<span class="upcoming-badge">Upcoming</span></div>
+          <div class="event-meta"><span><i class="bi bi-clock me-1"></i>All Day</span><span><i class="bi bi-geo-alt me-1"></i>Exam Centres</span><span><i class="bi bi-people me-1"></i>S4 &amp; S6 Candidates</span></div>
+        </div>
+      </div>
+      <div class="event-card" data-aos="fade-up" data-aos-delay="350">
+        <div class="event-date-block"><div class="day">05</div><div class="month">Dec</div><div class="year">2025</div></div>
+        <div class="event-body">
+          <div class="event-type" style="color:#A81818"><i class="bi bi-award me-1"></i>Ceremony</div>
+          <div class="event-title">Prize-Giving &amp; Graduation Day<span class="upcoming-badge">Upcoming</span></div>
+          <div class="event-meta"><span><i class="bi bi-clock me-1"></i>9:00 AM – 4:00 PM</span><span><i class="bi bi-geo-alt me-1"></i>Main School Grounds</span><span><i class="bi bi-people me-1"></i>All Welcome</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Past Events -->
+    <h3 style="font-family:var(--font-head);color:var(--primary);font-weight:700;margin-bottom:1.25rem" data-aos="fade-up">
+      Past Events <span class="past-badge" style="font-size:.75rem;vertical-align:middle">2024</span>
+    </h3>
+    <div class="d-flex flex-column gap-3">
+      <div class="event-card" data-aos="fade-up" data-aos-delay="50" style="opacity:.7">
+        <div class="event-date-block" style="background:#94A3B8"><div class="day">15</div><div class="month">Nov</div><div class="year">2024</div></div>
+        <div class="event-body">
+          <div class="event-type" style="color:var(--muted)"><i class="bi bi-trophy me-1"></i>Results</div>
+          <div class="event-title">UNEB Results Release — 94% Pass Rate<span class="past-badge">Completed</span></div>
+          <div class="event-meta"><span><i class="bi bi-clock me-1"></i>All Day</span><span><i class="bi bi-people me-1"></i>S4 &amp; S6 Students</span></div>
+        </div>
+      </div>
+      <div class="event-card" data-aos="fade-up" data-aos-delay="100" style="opacity:.7">
+        <div class="event-date-block" style="background:#94A3B8"><div class="day">20</div><div class="month">Oct</div><div class="year">2024</div></div>
+        <div class="event-body">
+          <div class="event-type" style="color:var(--muted)"><i class="bi bi-trophy me-1"></i>Sports</div>
+          <div class="event-title">District Football Championship — Winners!<span class="past-badge">Completed</span></div>
+          <div class="event-meta"><span><i class="bi bi-geo-alt me-1"></i>District Grounds</span><span><i class="bi bi-people me-1"></i>Football Team</span></div>
+        </div>
+      </div>
+      <div class="event-card" data-aos="fade-up" data-aos-delay="150" style="opacity:.7">
+        <div class="event-date-block" style="background:#94A3B8"><div class="day">12</div><div class="month">Sep</div><div class="year">2024</div></div>
+        <div class="event-body">
+          <div class="event-type" style="color:var(--muted)"><i class="bi bi-eyedropper me-1"></i>Academic</div>
+          <div class="event-title">Annual Science Fair 2024<span class="past-badge">Completed</span></div>
+          <div class="event-meta"><span><i class="bi bi-geo-alt me-1"></i>Science Block</span><span><i class="bi bi-people me-1"></i>All Students</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="footer-placeholder"></div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script src="js/nav-include.js"></script>
+<script src="js/main.js"></script>
+<script>
+// Countdown to Dec 5 2025
+function updateCountdown(){
+  const target = new Date('2025-12-05T09:00:00');
+  const now = new Date();
+  const diff = target - now;
+  if(diff <= 0){ document.getElementById('countdown').innerHTML='<p class="text-white">Event is happening now!</p>'; return; }
+  const d = Math.floor(diff/86400000);
+  const h = Math.floor((diff%86400000)/3600000);
+  const m = Math.floor((diff%3600000)/60000);
+  const s = Math.floor((diff%60000)/1000);
+  document.getElementById('cd-days').textContent = String(d).padStart(2,'0');
+  document.getElementById('cd-hours').textContent = String(h).padStart(2,'0');
+  document.getElementById('cd-mins').textContent = String(m).padStart(2,'0');
+  document.getElementById('cd-secs').textContent = String(s).padStart(2,'0');
+}
+updateCountdown();
+setInterval(updateCountdown, 1000);
+</script>
+</body>
+</html>

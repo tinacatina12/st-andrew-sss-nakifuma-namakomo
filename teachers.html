@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Teachers | St. Andrew SSS Namakomo</title>
+  <meta name="description" content="Meet the qualified and dedicated teachers at St. Andrew Senior Secondary School, Namakomo, organized by department.">
+  <link rel="icon" href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhhTWYKJonvPYfuCY8rJmXUM77RDfBgE_b8zfQPFUMawuc6NVCO26VoCQcD0BKBR9fLuAFuZ-qbZcqAqwkHKN9jttvG6uEEpiuHswR3OM6kQKWY9wX36qGeGhr4e-dxTCQ9rhj55pkr1hULzAYtsl617Q9-HKnqRbx79Ed_hgbDJkLnNs2xckCERltvCQ/s5016/ChatGPT%20Image%20Jun%2010,%202026,%2009_49_33%20AM%20%282%29.png" type="image/png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .teacher-card { background:#fff; border:1px solid var(--border); border-radius:var(--radius-lg); overflow:hidden; transition:box-shadow .3s,transform .3s; }
+    .teacher-card:hover { box-shadow:var(--shadow-lg); transform:translateY(-4px); }
+    .teacher-img { width:100%; height:230px; object-fit:cover; object-position:top; transition:transform .5s; }
+    .teacher-card:hover .teacher-img { transform:scale(1.05); }
+    .teacher-body { padding:1.1rem 1.25rem; }
+    .teacher-name { font-family:var(--font-head); font-weight:700; color:var(--primary); font-size:1rem; margin-bottom:.2rem; }
+    .teacher-subject { color:#A81818; font-size:.82rem; font-weight:600; margin-bottom:.2rem; }
+    .teacher-qual { color:var(--muted); font-size:.78rem; }
+    .dept-tab { padding:.5rem 1.1rem; border-radius:.75rem; font-weight:600; font-size:.85rem; border:1.5px solid var(--border); background:#fff; color:var(--primary-l); cursor:pointer; transition:all .2s; white-space:nowrap; }
+    .dept-tab.active,.dept-tab:hover { background:var(--primary); color:#fff; border-color:var(--primary); }
+    .dept-section { display:none; }
+    .dept-section.active { display:block; }
+    .stat-bar { display:flex; align-items:center; gap:.75rem; padding:.6rem 0; border-bottom:1px solid var(--border); }
+    .stat-bar:last-child { border:none; }
+  </style>
+</head>
+<body>
+<div id="nav-placeholder"></div>
+<section class="page-hero" style="background-image:url('https://images.unsplash.com/photo-1524179091875-bf99a9a6af57?w=1600&q=80')">
+  <div class="hero-overlay"></div>
+  <div class="container hero-content">
+    <nav class="breadcrumb-custom"><a href="index.html">Home</a><span class="sep"><i class="bi bi-chevron-right"></i></span><span class="current">Our Teachers</span></nav>
+    <div class="hero-tag"><span>St. Andrew SSS Namakomo</span></div>
+    <h1>Our Teaching Staff</h1>
+    <p>Meet the passionate, qualified educators who make St. Andrew SSS Namakomo a centre of excellence.</p>
+  </div>
+</section>
+
+<!-- STATS BANNER -->
+<section style="background:var(--bg-alt);border-bottom:1px solid var(--border);padding:1.5rem 0">
+  <div class="container">
+    <div class="row g-3 text-center">
+      <div class="col-6 col-md-3"><div style="font-family:var(--font-head);font-size:2rem;font-weight:900;color:var(--primary)" data-count="85" data-suffix="+">0+</div><p class="mb-0 text-muted-custom" style="font-size:.85rem">Total Teachers</p></div>
+      <div class="col-6 col-md-3"><div style="font-family:var(--font-head);font-size:2rem;font-weight:900;color:var(--primary)" data-count="72" data-suffix="%">0%</div><p class="mb-0 text-muted-custom" style="font-size:.85rem">University Degree Holders</p></div>
+      <div class="col-6 col-md-3"><div style="font-family:var(--font-head);font-size:2rem;font-weight:900;color:var(--primary)" data-count="6">0</div><p class="mb-0 text-muted-custom" style="font-size:.85rem">Academic Departments</p></div>
+      <div class="col-6 col-md-3"><div style="font-family:var(--font-head);font-size:2rem;font-weight:900;color:var(--primary)" data-count="12" data-suffix="+">0+</div><p class="mb-0 text-muted-custom" style="font-size:.85rem">Avg. Years Experience</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- TEACHERS BY DEPARTMENT -->
+<section class="section-pad">
+  <div class="container">
+    <div class="text-center mb-5" data-aos="fade-up">
+      <span class="section-tag justify-content-center" style="display:flex">Teaching Staff</span>
+      <h2 class="section-title">Meet Our Teachers</h2>
+      <p class="section-sub mx-auto mt-2">Filter by department to find specific subject teachers.</p>
+    </div>
+
+    <!-- Department Tabs -->
+    <div class="d-flex gap-2 flex-wrap justify-content-center mb-5" id="deptTabs">
+      <button class="dept-tab active" data-dept="all">All Departments</button>
+      <button class="dept-tab" data-dept="sciences">🔬 Sciences</button>
+      <button class="dept-tab" data-dept="maths">📐 Mathematics</button>
+      <button class="dept-tab" data-dept="languages">📚 Languages</button>
+      <button class="dept-tab" data-dept="humanities">🌍 Humanities</button>
+      <button class="dept-tab" data-dept="ict">💻 ICT</button>
+      <button class="dept-tab" data-dept="arts">🎨 Arts &amp; Vocational</button>
+    </div>
+
+    <!-- All Teachers Grid -->
+    <div class="row g-4" id="teachersGrid">
+      <!-- SCIENCES -->
+      <div class="col-sm-6 col-lg-3 teacher-item" data-dept="sciences" data-aos="zoom-in" data-aos-delay="50">
+        <div class="teacher-card">
+          <div style="overflow:hidden"><img src="https://randomuser.me/api/portraits/women/25.jpg" alt="Ms. Fatuma Nalwoga" class="teacher-img"></div>
+          <div class="teacher-body">
+            <div class="teacher-name">Ms. Fatuma Nalwoga</div>
+            <div class="teacher-subject"><i class="bi bi-flask me-1"></i>Chemistry &amp; Biology</div>
+            <div class="teacher-qual">B.Sc. Chemistry, Kyambogo University</div>
+            <div class="mt-2 pt-2 border-top d-flex align-items-center justify-content-between">
+              <span class="badge-emerald" style="font-size:.68rem">Head of Sciences</span>
+              <span style="font-size:.75rem;color:var(--muted)">14 yrs exp.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-3 teacher-item" data-dept="sciences" data-aos="zoom-in" data-aos-delay="100">
+        <div class="teacher-card">
+          <div style="overflow:hidden"><img src="https://randomuser.me/api/portraits/men/22.jpg" alt="Mr. Isaac Ssemanda" class="teacher-img"></div>
+          <div class="teacher-body">
+            <div class="teacher-name">Mr. Isaac Ssemanda</div>
+            <div class="teacher-subject"><i class="bi bi-lightning me-1"></i>Physics</div>
+            <div class="teacher-qual">B.Sc. Ed. Physics, Makerere University</div>
+            <div class="mt-2 pt-2 border-top d-flex align-items-center justify-content-between">
+              <span class="badge-blue" style="font-size:.68rem">Senior Teacher</span>
+              <span style="font-size:.75rem;color:var(--muted)">10 yrs exp.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-3 teacher-item" data-dept="sciences" data-aos="zoom-in" data-aos-delay="150">
+        <div class="teacher-card">
+          <div style="overflow:hidden"><img src="https://randomuser.me/api/portraits/women/48.jpg" alt="Ms. Rose Namubiru" class="teacher-img"></div>
+          <div class="teacher-body">
+            <div class="teacher-name">Ms. Rose Namubiru</div>
+            <div class="teacher-subject"><i class="bi bi-tree me-1"></i>Biology &amp; Agriculture</div>
+            <div class="teacher-qual">B.Sc. Ed. Biology, Kyambogo University</div>
+            <div class="mt-2 pt-2 border-top d-flex align-items-center justify-content-between">
+              <span class="badge-emerald" style="font-size:.68rem">Teacher</span>
+              <span style="font-size:.75rem;color:var(--muted)">7 yrs exp.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-3 teacher-item" data-dept="sciences" data-aos="zoom-in" data-aos-delay="200">
+        <div class="teacher-card">
+          <div style="overflow:hidden"><img src="https://randomuser.me/api/portraits/men/34.jpg" alt="Mr. Paul Kiguli" class="teacher-img"></div>
+          <div class="teacher-body">
+            <div class="teacher-name">Mr. Paul Kiguli</div>
+            <div class="teacher-subject"><i class="bi bi-flask me-1"></i>Chemistry</div>
+            <div class="teacher-qual">B.Sc. Industrial Chemistry, Makerere</div>
+            <div class="mt-2 pt-2 border-top d-flex align-items-center justify-content-between">
+              <span class="badge-gold" style="font-size:.68rem">Teacher</span>
+              <span style="font-size:.75rem;color:var(--muted)">5 yrs exp.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- MATHEMATICS -->
+      <div class="col-sm-6 col-lg-3 teacher-item" data-dept="maths" data-aos="zoom-in" data-aos-delay="50">
+        <div class="teacher-card">
+          <div style="overflow:hidden"><img src="https://randomuser.me/api/portraits/men/55.jpg" alt="Mr. Samuel Ssekiziyivu" class="teacher-img"></div>
+          <div class="teacher-body">
+            <div class="teacher-name">Mr. Samuel Ssekiziyivu</div>
+            <div class="teacher-subject"><i class="bi bi-calculator me-1"></i>Pure &amp; Applied Maths</div>
+            <div class="teacher-qual">B.Sc. Ed. Mathematics, Makerere</div>
+            <div class="mt-2 pt-2 border-top d-flex align-items-center justify-content-between">
+              <span class="badge-emerald" style="font-size:.68rem">Head of Maths</span>
+              <span style="font-size:.75rem;color:var(--muted)">18 yrs exp.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-3 teacher-item" data-dept="maths" data-aos="zoom-in" data-aos-delay="100">
+        <div class="teacher-card">
+          <div style="overflow:hidden"><img src="https://randomuser.me/api/portraits/women/37.jpg" alt="Ms. Juliet Nakamya" class="teacher-img"></div>
+          <div class="teacher-body">
+            <div class="teacher-name">Ms. Juliet Nakamya</div>
+            <div class="teacher-subject"><i class="bi bi-calculator me-1"></i>Mathematics &amp; Statistics</div>
+            <div class="teacher-qual">B.Sc. Ed. Mathematics, Kyambogo</div>
+            <div class="mt-2 pt-2 border-top d-flex align-items-center justify-content-between">
+              <span class="badge-blue" style="font-size:.68rem">Senior Teacher</span>
+              <span style="font-size:.75rem;color:var(--muted)">11 yrs exp.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-3 teacher-item" data-dept="maths" data-aos="zoom-in" data-aos-delay="150">
+        <div class="teacher-card">
+          <div style="overflow:hidden"><img src="https://randomuser.me/api/portraits/men/19.jpg" alt="Mr. Emmanuel Kabanda" class="teacher-img"></div>
+          <div class="teacher-body">
+            <div class="teacher-name">Mr. Emmanuel Kabanda</div>
+            <div class="teacher-subject"><i class="bi bi-calculator me-1"></i>Mathematics</div>
+            <div class="teacher-qual">B.Sc. Mathematics, Uganda Martyrs Univ.</div>
+            <div class="mt-2 pt-2 border-top d-flex align-items-center justify-content-between">
+              <span class="badge-gold" style="font-size:.68rem">Teacher</span>
+              <span style="font-size:.75rem;color:var(--muted)">6 yrs exp.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- LANGUAGES -->
+      <div class="col-sm-6 col-lg-3 teacher-item" data-dept="languages" data-aos="zoom-in" data-aos-delay="50">
+        <div class="teacher-card">
+          <div style="overflow:hidden"><img src="https://randomuser.me/api/portraits/women/33.jpg" alt="Ms. Winnie Nabukeera" class="teacher-img"></div>
+          <div class="teacher-body">
+            <div class="teacher-name">Ms. Winnie Nabukeera</div>
+            <div class="teacher-subject"><i class="bi bi-chat-quote me-1"></i>English Language &amp; Literature</div>
+            <div class="teacher-qual">B.Ed. English, Kyambogo University</div>
+            <div class="mt-2 pt-2 border-top d-flex align-items-center justify-content-between">
+              <span class="badge-emerald" style="font-size:.68rem">Head of Languages</span>
+              <span style="font-size:.75rem;color:var(--muted)">15 yrs exp.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-3 teacher-item" data-dept="languages" data-aos="zoom-in" data-aos-delay="100">
+        <div class="teacher-card">
+          <div style="overflow:hidden"><img src="https://randomuser.me/api/portraits/men/67.jpg" alt="Mr. Henry Babirye" class="teacher-img"></div>
+          <div class="teacher-body">
+            <div class="teacher-name">Mr. Henry Babirye</div>
+            <div class="teacher-subject"><i class="bi bi-translate me-1"></i>Luganda &amp; Literature</div>
+            <div class="teacher-qual">B.Ed. Luganda, Makerere University</div>
+            <div class="mt-2 pt-2 border-top d-flex align-items-center justify-content-between">
+              <span class="badge-blue" style="font-size:.68rem">Senior Teacher</span>
+              <span style="font-size:.75rem;color:var(--muted)">9 yrs exp.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-3 teacher-item" data-dept="languages" data-aos="zoom-in" data-aos-delay="150">
+        <div class="teacher-card">
+          <div style="overflow:hidden"><img src="https://randomuser.me/api/portraits/women/55.jpg" alt="Ms. Claire Ategeka" class="teacher-img"></div>
+          <div class="teacher-body">
+            <div class="teacher-name">Ms. Claire Ategeka</div>
+            <div class="teacher-subject"><i class="bi bi-flag me-1"></i>French &amp; English</div>
+            <div class="teacher-qual">B.Ed. French, Makerere University</div>
+            <div class="mt-2 pt-2 border-top d-flex align-items-center justify-content-between">
+              <span class="badge-gold" style="font-size:.68rem">Teacher</span>
+              <span style="font-size:.75rem;color:var(--muted)">8 yrs exp.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- HUMANITIES -->
+      <div class="col-sm-6 col-lg-3 teacher-item" data-dept="humanities" data-aos="zoom-in" data-aos-delay="50">
+        <div class="teacher-card">
+          <div style="overflow:hidden"><img src="https://randomuser.me/api/portraits/men/72.jpg" alt="Mr. Geoffrey Nkuubi" class="teacher-img"></div>
+          <div class="teacher-body">
+            <div class="teacher-name">Mr. Geoffrey Nkuubi</div>
+            <div class="teacher-subject"><i class="bi bi-globe2 me-1"></i>History &amp; Political Ed.</div>
+            <div class="teacher-qual">B.A. History &amp; Political Science, MAK</div>
+            <div class="mt-2 pt-2 border-top d-flex align-items-center justify-content-between">
+              <span class="badge-emerald" style="font-size:.68rem">Head of Humanities</span>
+              <span style="font-size:.75rem;color:var(--muted)">13 yrs exp.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-3 teacher-item" data-dept="humanities" data-aos="zoom-in" data-aos-delay="100">
+        <div class="teacher-card">
+          <div style="overflow:hidden"><img src="https://randomuser.me/api/portraits/women/42.jpg" alt="Ms. Josephine Nansubuga" class="teacher-img"></div>
+          <div class="teacher-body">
+            <div class="teacher-name">Ms. Josephine Nansubuga</div>
+            <div class="teacher-subject"><i class="bi bi-geo-alt me-1"></i>Geography &amp; Environment</div>
+            <div class="teacher-qual">B.A. Geography, Kyambogo University</div>
+            <div class="mt-2 pt-2 border-top d-flex align-items-center justify-content-between">
+              <span class="badge-blue" style="font-size:.68rem">Senior Teacher</span>
+              <span style="font-size:.75rem;color:var(--muted)">10 yrs exp.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-3 teacher-item" data-dept="humanities" data-aos="zoom-in" data-aos-delay="150">
+        <div class="teacher-card">
+          <div style="overflow:hidden"><img src="https://randomuser.me/api/portraits/men/29.jpg" alt="Mr. David Semitala" class="teacher-img"></div>
+          <div class="teacher-body">
+            <div class="teacher-name">Mr. David Semitala</div>
+            <div class="teacher-subject"><i class="bi bi-cash me-1"></i>Economics &amp; Entrepreneurship</div>
+            <div class="teacher-qual">B.Com. Economics, MUBS</div>
+            <div class="mt-2 pt-2 border-top d-flex align-items-center justify-content-between">
+              <span class="badge-gold" style="font-size:.68rem">Teacher</span>
+              <span style="font-size:.75rem;color:var(--muted)">6 yrs exp.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-3 teacher-item" data-dept="humanities" data-aos="zoom-in" data-aos-delay="200">
+        <div class="teacher-card">
+          <div style="overflow:hidden"><img src="https://randomuser.me/api/portraits/women/61.jpg" alt="Sr. Agnes Namusisi" class="teacher-img"></div>
+          <div class="teacher-body">
+            <div class="teacher-name">Sr. Agnes Namusisi</div>
+            <div class="teacher-subject"><i class="bi bi-book me-1"></i>Christian Religious Ed.</div>
+            <div class="teacher-qual">B.Th., Uganda Catholic University</div>
+            <div class="mt-2 pt-2 border-top d-flex align-items-center justify-content-between">
+              <span class="badge-blue" style="font-size:.68rem">Senior Teacher</span>
+              <span style="font-size:.75rem;color:var(--muted)">17 yrs exp.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ICT -->
+      <div class="col-sm-6 col-lg-3 teacher-item" data-dept="ict" data-aos="zoom-in" data-aos-delay="50">
+        <div class="teacher-card">
+          <div style="overflow:hidden"><img src="https://randomuser.me/api/portraits/men/44.jpg" alt="Mr. Brian Wamala" class="teacher-img"></div>
+          <div class="teacher-body">
+            <div class="teacher-name">Mr. Brian Wamala</div>
+            <div class="teacher-subject"><i class="bi bi-monitor me-1"></i>Computer Studies &amp; ICT</div>
+            <div class="teacher-qual">B.Sc. Computer Science, Makerere</div>
+            <div class="mt-2 pt-2 border-top d-flex align-items-center justify-content-between">
+              <span class="badge-emerald" style="font-size:.68rem">Head of ICT</span>
+              <span style="font-size:.75rem;color:var(--muted)">9 yrs exp.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-3 teacher-item" data-dept="ict" data-aos="zoom-in" data-aos-delay="100">
+        <div class="teacher-card">
+          <div style="overflow:hidden"><img src="https://randomuser.me/api/portraits/women/19.jpg" alt="Ms. Sandra Akello" class="teacher-img"></div>
+          <div class="teacher-body">
+            <div class="teacher-name">Ms. Sandra Akello</div>
+            <div class="teacher-subject"><i class="bi bi-laptop me-1"></i>ICT &amp; Digital Skills</div>
+            <div class="teacher-qual">B.Sc. Information Technology, MUBS</div>
+            <div class="mt-2 pt-2 border-top d-flex align-items-center justify-content-between">
+              <span class="badge-gold" style="font-size:.68rem">Teacher</span>
+              <span style="font-size:.75rem;color:var(--muted)">4 yrs exp.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ARTS & VOCATIONAL -->
+      <div class="col-sm-6 col-lg-3 teacher-item" data-dept="arts" data-aos="zoom-in" data-aos-delay="50">
+        <div class="teacher-card">
+          <div style="overflow:hidden"><img src="https://randomuser.me/api/portraits/women/74.jpg" alt="Ms. Patricia Musoke" class="teacher-img"></div>
+          <div class="teacher-body">
+            <div class="teacher-name">Ms. Patricia Musoke</div>
+            <div class="teacher-subject"><i class="bi bi-palette me-1"></i>Art &amp; Crafts / Fine Art</div>
+            <div class="teacher-qual">B.A. Fine Art, Makerere University</div>
+            <div class="mt-2 pt-2 border-top d-flex align-items-center justify-content-between">
+              <span class="badge-emerald" style="font-size:.68rem">Head of Arts</span>
+              <span style="font-size:.75rem;color:var(--muted)">12 yrs exp.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-3 teacher-item" data-dept="arts" data-aos="zoom-in" data-aos-delay="100">
+        <div class="teacher-card">
+          <div style="overflow:hidden"><img src="https://randomuser.me/api/portraits/women/82.jpg" alt="Ms. Grace Nampijja" class="teacher-img"></div>
+          <div class="teacher-body">
+            <div class="teacher-name">Ms. Grace Nampijja</div>
+            <div class="teacher-subject"><i class="bi bi-house-heart me-1"></i>Home Economics</div>
+            <div class="teacher-qual">B.Sc. Home Economics, Kyambogo</div>
+            <div class="mt-2 pt-2 border-top d-flex align-items-center justify-content-between">
+              <span class="badge-blue" style="font-size:.68rem">Senior Teacher</span>
+              <span style="font-size:.75rem;color:var(--muted)">8 yrs exp.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-3 teacher-item" data-dept="arts" data-aos="zoom-in" data-aos-delay="150">
+        <div class="teacher-card">
+          <div style="overflow:hidden"><img src="https://randomuser.me/api/portraits/men/81.jpg" alt="Mr. Moses Kayiwa" class="teacher-img"></div>
+          <div class="teacher-body">
+            <div class="teacher-name">Mr. Moses Kayiwa</div>
+            <div class="teacher-subject"><i class="bi bi-music-note me-1"></i>Music, Dance &amp; Drama</div>
+            <div class="teacher-qual">B.Mus. Makerere University</div>
+            <div class="mt-2 pt-2 border-top d-flex align-items-center justify-content-between">
+              <span class="badge-gold" style="font-size:.68rem">Teacher</span>
+              <span style="font-size:.75rem;color:var(--muted)">5 yrs exp.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Join Our Team CTA -->
+    <div class="mt-5 pt-4 border-top text-center" data-aos="fade-up">
+      <div style="background:var(--bg-alt);border-radius:var(--radius-xl);padding:2.5rem;border:1px solid var(--border)">
+        <i class="bi bi-person-plus-fill" style="font-size:2.5rem;color:#CC1C1C;display:block;margin-bottom:1rem"></i>
+        <h4 style="font-family:var(--font-head);color:var(--primary);font-weight:700">Join Our Team</h4>
+        <p class="text-muted-custom mb-4" style="max-width:480px;margin-left:auto;margin-right:auto">We are always looking for passionate, qualified teachers to join the St. Andrew SSS family. If you are dedicated to shaping young minds, we'd love to hear from you.</p>
+        <a href="contact.html" class="btn btn-gold">Send Your Application <i class="bi bi-arrow-right ms-1"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="footer-placeholder"></div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script src="js/nav-include.js"></script>
+<script src="js/main.js"></script>
+<script>
+document.querySelectorAll('.dept-tab').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.dept-tab').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const dept = btn.dataset.dept;
+    document.querySelectorAll('.teacher-item').forEach(item => {
+      item.style.display = (dept === 'all' || item.dataset.dept === dept) ? '' : 'none';
+    });
+  });
+});
+</script>
+</body>
+</html>
